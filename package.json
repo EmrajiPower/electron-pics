@@ -1,0 +1,15 @@
+{
+  "name": "platzipics",
+  "version": "1.0.0",
+  "description": "Un aplicativo de electron",
+  "main": "index.js ",
+  "scripts": {
+    "dev": "electron src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manu",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^4.1.0"
+  }
+}
