@@ -1,6 +1,11 @@
 'use strict'
 // Instanciando los objetos app y BrowserWindows
-const {app,BrowserWindow} = require('electron')
+import {app,BrowserWindow} from 'electron'
+import devtools from './devtools'
+
+if(process.env.NODE_ENV == 'development'){
+  devtools();
+}
 
 console.log(app);
 
