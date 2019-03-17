@@ -11,7 +11,9 @@
   "license": "MIT",
   "dependencies": {
     "cross-env": "^5.2.0",
-    "electron-compile": "^6.4.4"
+    "devtron": "^1.4.0",
+    "electron-compile": "^6.4.4",
+    "electron-debug": "^2.1.0"
   },
   "devDependencies": {
     "electron-prebuilt-compile": "^4.0.0"

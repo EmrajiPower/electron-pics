@@ -15,6 +15,7 @@ app.on('ready',() => {
   let win = new BrowserWindow({
     width: 1000,
     heigh: 1000,
+    resizable: false,
     title: 'Primera App 😎',
     show: false
   })
@@ -23,7 +24,11 @@ app.on('ready',() => {
     win.show() //Muestra la ventana actual
   })
 
+  //Lo visual
   win.loadURL(`file://${__dirname}/renderer/index.html`)
+
+  //Devtools
+  win.toggleDevTools();
 
   // Detectando el cierre de la ventana para cerra la aplicación
   win.on('closed',() => {
