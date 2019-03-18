@@ -13,10 +13,10 @@ console.log(app);
 app.on('ready',() => {
   // creando ventana
   let win = new BrowserWindow({
-    width: 1000,
-    heigh: 1000,
+    width: 1200,
+    heigh: 1400,
     resizable: false,
-    title: 'Primera App 😎',
+    title: 'Inventario Dulcería Tica',
     show: false
   })
 

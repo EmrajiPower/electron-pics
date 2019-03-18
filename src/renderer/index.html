@@ -2,11 +2,76 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/material.css">
+    <script src="xel.min.js"></script>
     <script type="text/javascript" src="frontend.js"></script>
-    <title>App</title>
+    <title>Registros Dulcería y Variedades Tica</title>
   </head>
   <body>
-    <p id="saludar">Versión 0.1.1 😎👍</p>
+    <header>
+    <x-tabs class="header">
+      <x-tab selected>
+        <x-box>
+          <x-label>Productos</x-label>
+        </x-box>
+      </x-tab>
+      <x-tab>
+        <x-box>
+          <x-label>Usuarios</x-label>
+        </x-box>
+      </x-tab>
+      <x-tab>
+        <x-box>
+          <x-label>Cliente</x-label>
+        </x-box>
+      </x-tab>
+      <x-tab>
+        <x-box>
+          <x-label>Proveedor</x-label>
+        </x-box>
+      </x-tab>
+      <x-tab>
+        <x-box>
+          <x-label>Cerrar Sesión</x-label>
+        </x-box>
+      </x-tab>
+    </x-tabs>
+    </header>
+    <x-tabs centered>
+      <x-tab selected>
+        <x-label>Total Clientes</x-label>
+      </x-tab>
+      <x-tab>
+        <x-label>Total Productos</x-label>
+      </x-tab>
+      <x-tab>
+        <x-label>Total Proveedor</x-label>
+      </x-tab>
+    </x-tabs>
+    <x-tabs centered>
+      <x-button class="btn-agregar">
+        <x-label>Agregar</x-label>
+      </x-button>
+    </x-tabs>
+    <section>
+      <x-tabs class="tabla-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre de Producto</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zapatos Carlota</td>
+              <td>Se encargaron 100 esta semana</td>
+              <td>860.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </x-tabs>
+    </section>
   </body>
 </html>
