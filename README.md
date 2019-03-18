@@ -1,5 +1,5 @@
-# electron-pics
-Es un Gestor de Imágenes con electron js.
+# electron-dulcería
+Es un Gestor de Inventarios para una dulcería hecho con electron js.
 
 
 # Inicializar código
