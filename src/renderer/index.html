@@ -10,19 +10,14 @@
   <body>
     <header>
     <x-tabs class="header">
-      <x-tab selected>
+      <x-tab>
         <x-box>
-          <x-label>Productos</x-label>
+          <x-label onclick="desactivarBoton()" class="boton1">Productos</x-label>
         </x-box>
       </x-tab>
       <x-tab>
         <x-box>
-          <x-label>Usuarios</x-label>
-        </x-box>
-      </x-tab>
-      <x-tab>
-        <x-box>
-          <x-label>Cliente</x-label>
+          <x-label>Clientes</x-label>
         </x-box>
       </x-tab>
       <x-tab>
@@ -38,7 +33,7 @@
     </x-tabs>
     </header>
     <x-tabs centered>
-      <x-tab selected>
+      <x-tab>
         <x-label>Total Clientes</x-label>
       </x-tab>
       <x-tab>
@@ -55,7 +50,26 @@
     </x-tabs>
     <section>
       <x-tabs class="tabla-container">
-        <table>
+        <!-- Tabla 1 -->
+        <table id="tabla1" style="display:block;">
+          <thead>
+            <tr>
+              <th>Nombre de Producto</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>María López</td>
+              <td>Entregar en 2 semanas 200</td>
+              <td>1.900.000</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Tabla 2 -->
+        <br>
+        <!-- <table class="tabla2">
           <thead>
             <tr>
               <th>Nombre de Producto</th>
@@ -70,8 +84,10 @@
               <td>860.000</td>
             </tr>
           </tbody>
-        </table>
+        </table> -->
       </x-tabs>
     </section>
+    <footer>
+    </footer>
   </body>
 </html>
