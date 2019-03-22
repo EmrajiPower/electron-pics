@@ -13,9 +13,9 @@ console.log(app);
 app.on('ready',() => {
   // creando ventana
   let win = new BrowserWindow({
-    width: 1200,
+    width: 1800,
     heigh: 1400,
-    resizable: false,
+    // resizable: false,
     title: 'Inventario Dulcería Tica',
     show: false
   })

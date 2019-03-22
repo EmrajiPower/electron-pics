@@ -12,22 +12,22 @@
     <x-tabs class="header">
       <x-tab>
         <x-box>
-          <x-label onclick="desactivarBoton()" class="boton1">Productos</x-label>
+          <x-label onclick="mostrarTablaProducto()" id="btn1">Productos</x-label>
         </x-box>
       </x-tab>
       <x-tab>
         <x-box>
-          <x-label>Clientes</x-label>
+          <x-label onclick="mostrarTablasCliente()" id="btn2">Clientes</x-label>
         </x-box>
       </x-tab>
       <x-tab>
         <x-box>
-          <x-label>Proveedor</x-label>
+          <x-label onclick="mostrarTablasProveedor()" id="btn3">Proveedor</x-label>
         </x-box>
       </x-tab>
       <x-tab>
         <x-box>
-          <x-label>Cerrar Sesión</x-label>
+          <x-label id="btn4">Cerrar Sesión</x-label>
         </x-box>
       </x-tab>
     </x-tabs>
@@ -51,7 +51,7 @@
     <section>
       <x-tabs class="tabla-container">
         <!-- Tabla 1 -->
-        <table id="tabla1" style="display:block;">
+        <table id="tabla1" style="display:block">
           <thead>
             <tr>
               <th>Nombre de Producto</th>
@@ -61,30 +61,58 @@
           </thead>
           <tbody>
             <tr>
-              <td>María López</td>
-              <td>Entregar en 2 semanas 200</td>
-              <td>1.900.000</td>
+              <td>Vasos para Tinto</td>
+              <td>Entregar la proxima semana 200 unidades</td>
+              <td>120.000</td>
             </tr>
           </tbody>
         </table>
         <!-- Tabla 2 -->
         <br>
-        <!-- <table class="tabla2">
+        <table id="tabla2" style="display:block">
           <thead>
             <tr>
-              <th>Nombre de Producto</th>
+              <th>Nombre del Cliente</th>
+              <th>Cédula</th>
               <th>Descripción</th>
-              <th>Precio</th>
+              <th>Correo</th>
+              <th>Total por Pagar</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Zapatos Carlota</td>
-              <td>Se encargaron 100 esta semana</td>
-              <td>860.000</td>
+              <td>Marciano López</td>
+              <td>1.040.541.141</td>
+              <td>Amigo de Geidy, entregar donde D&D</td>
+              <td>sincorreo@hotmail.es</td>
+              <td>3.010.000</td>
             </tr>
           </tbody>
-        </table> -->
+        </table>
+        <!-- Tabla 3 -->
+        <br>
+        <table id="tabla3" style="display:block">
+          <thead>
+            <tr>
+              <th>Nombre de Proveedor</th>
+              <th>NIT</th>
+              <th>Descripción</th>
+              <th>Encargado</th>
+              <th>Correo</th>
+              <th>Total a Cancelar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dulces Juanchis</td>
+              <td>98100823</td>
+              <td>Se encargaron x100 unidades esta semana</td>
+              <td>Camila Cabello</td>
+              <td>cbaello@outlook.com</td>
+              <td>470.000</td>
+            </tr>
+          </tbody>
+        </table>
       </x-tabs>
     </section>
     <footer>
