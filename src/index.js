@@ -21,7 +21,7 @@ app.on('ready',() => {
   })
 
   win.once('ready-to-show',() => {
-    win.show() //Muestra la ventana actual
+    win.show() //Muestra la ventana actual    
   })
 
   //Lo visual

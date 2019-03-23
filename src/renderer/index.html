@@ -11,18 +11,18 @@
     <header>
     <x-tabs class="header">
       <x-tab>
-        <x-box>
-          <x-label onclick="mostrarTablaProducto()" id="btn1">Productos</x-label>
+        <x-box  onclick="mostrarTablaProducto()" id="btn1">
+          <x-label>Productos</x-label>
         </x-box>
       </x-tab>
       <x-tab>
-        <x-box>
-          <x-label onclick="mostrarTablasCliente()" id="btn2">Clientes</x-label>
+        <x-box  onclick="mostrarTablasCliente()" id="btn2">
+          <x-label>Clientes</x-label>
         </x-box>
       </x-tab>
       <x-tab>
-        <x-box>
-          <x-label onclick="mostrarTablasProveedor()" id="btn3">Proveedor</x-label>
+        <x-box onclick="mostrarTablasProveedor()" id="btn3">
+          <x-label >Proveedor</x-label>
         </x-box>
       </x-tab>
       <x-tab>
@@ -44,14 +44,18 @@
       </x-tab>
     </x-tabs>
     <x-tabs centered>
-      <x-button class="btn-agregar">
-        <x-label>Agregar</x-label>
-      </x-button>
+      <x-input id="buscar">
+        <x-icon name="search"></x-icon>
+        <x-label>Buscar nombre</x-label>
+      </x-input>
     </x-tabs>
     <section>
+      <x-button class="btn-agregar">
+        <x-label>Agregar persona</x-label>
+      </x-button>
       <x-tabs class="tabla-container">
         <!-- Tabla 1 -->
-        <table id="tabla1" style="display:block">
+        <table id="tabla1" style="display:none">
           <thead>
             <tr>
               <th>Nombre de Producto</th>
@@ -60,16 +64,31 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Vasos para Tinto</td>
+            <tr id="fila">
+              <td id="buscado">Vasos para Tinto</td>
               <td>Entregar la proxima semana 200 unidades</td>
               <td>120.000</td>
+              <td>
+                <x-button class="btn-editar">
+                  <x-label>Editar</x-label>
+                </x-button>
+              </td>
+            </tr>
+            <tr id="fila">
+              <td id="buscado">Platanitos caseros</td>
+              <td>Entregar recibir 25 unidades</td>
+              <td>89.500</td>
+              <td>
+                <x-button class="btn-editar">
+                  <x-label>Editar</x-label>
+                </x-button>
+              </td>
             </tr>
           </tbody>
         </table>
         <!-- Tabla 2 -->
         <br>
-        <table id="tabla2" style="display:block">
+        <table id="tabla2" style="display:none">
           <thead>
             <tr>
               <th>Nombre del Cliente</th>
@@ -80,18 +99,35 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Marciano López</td>
+            <tr id="fila">
+              <td id="buscado">Marciano López</td>
               <td>1.040.541.141</td>
               <td>Amigo de Geidy, entregar donde D&D</td>
               <td>sincorreo@hotmail.es</td>
               <td>3.010.000</td>
+              <td>
+                <x-button class="btn-editar">
+                  <x-label>Editar</x-label>
+                </x-button>
+              </td>
+            </tr>
+            <tr id="fila">
+              <td id="buscado">Carlos Jiménez</td>
+              <td>1.050.012.712</td>
+              <td>Dulcería en Sabanagrande</td>
+              <td>carlitosj@hotmail.com</td>
+              <td>100.200</td>
+              <td>
+                <x-button class="btn-editar">
+                  <x-label>Editar</x-label>
+                </x-button>
+              </td>
             </tr>
           </tbody>
         </table>
         <!-- Tabla 3 -->
         <br>
-        <table id="tabla3" style="display:block">
+        <table id="tabla3" style="display:none">
           <thead>
             <tr>
               <th>Nombre de Proveedor</th>
@@ -103,13 +139,31 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Dulces Juanchis</td>
+            <tr id="fila">
+              <td id="buscado">Dulces Juanchis</td>
               <td>98100823</td>
               <td>Se encargaron x100 unidades esta semana</td>
               <td>Camila Cabello</td>
               <td>cbaello@outlook.com</td>
               <td>470.000</td>
+              <td>
+                <x-button class="btn-editar">
+                  <x-label>Editar</x-label>
+                </x-button>
+              </td>
+            </tr>
+            <tr id="fila">
+              <td id="buscado">Rosquitas la Bendición</td>
+              <td>11691743</td>
+              <td>Se encargaron x80 el 09 de Mayo (Reclamar Promoción)</td>
+              <td>Julián Ríos</td>
+              <td>julio86@outlook.com</td>
+              <td>154.000</td>
+              <td>
+                <x-button class="btn-editar">
+                  <x-label>Editar</x-label>
+                </x-button>
+              </td>
             </tr>
           </tbody>
         </table>
