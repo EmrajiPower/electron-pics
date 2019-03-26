@@ -2,36 +2,58 @@ function mostrarTablaProducto() {
   document.getElementById('tabla1').style.display = 'block'
   document.getElementById('tabla2').style.display = 'none'
   document.getElementById('tabla3').style.display = 'none'
-  buscarNombre()
+  buscarNombre_tabla1()
 }
 
 function mostrarTablasCliente() {
   document.getElementById('tabla1').style.display = 'none'
   document.getElementById('tabla2').style.display = 'block'
   document.getElementById('tabla3').style.display = 'none'
-  buscarNombre()
+  buscarNombre_tabla2()
 }
 
-function mostrarTablasProveedor() {
-  document.getElementById('tabla1').style.display = 'none'
-  document.getElementById('tabla2').style.display = 'none'
-  document.getElementById('tabla3').style.display = 'block'
-  buscarNombre()
-}
-
-function buscarNombre() {
+// function mostrarTablasProveedor() {
+//   document.getElementById('tabla1').style.display = 'none'
+//   document.getElementById('tabla2').style.display = 'none'
+//   document.getElementById('tabla3').style.display = 'block'
+//   buscarNombre()
+// }
+function buscarNombre_tabla1() {
   var $rows = $('#tabla1 tr');
   $('#buscar').keyup(function() {
-
     var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
     reg = RegExp(val, 'i'),
     text;
-
     $rows.show().filter(function() {
       text = $(this).text().replace(/\s+/g, ' ');
       return !reg.test(text);
     }).hide();
   });
+}
+
+  function buscarNombre_tabla2() {
+    var $rows = $('#tabla2 tr');
+    $('#buscar').keyup(function() {
+      var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+      reg = RegExp(val, 'i'),
+      text;
+      $rows.show().filter(function() {
+        text = $(this).text().replace(/\s+/g, ' ');
+        return !reg.test(text);
+      }).hide();
+    });
+    }
+    // function buscarNombre_tabla2() {
+    //   var $rows = $('#tabla3 tr');
+    //   $('#buscar').keyup(function() {
+    //     var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+    //     reg = RegExp(val, 'i'),
+    //     text;
+    //     $rows.show().filter(function() {
+    //       text = $(this).text().replace(/\s+/g, ' ');
+    //       return !reg.test(text);
+    //     }).hide();
+    //   });
 
   // var celdas = document.querySelectorAll("#tabla1 td")
   // var buscar = document.getElementById("buscar")
@@ -58,4 +80,3 @@ function buscarNombre() {
   //   }
   // })
   // mostrarTablaOriginal()
-}
