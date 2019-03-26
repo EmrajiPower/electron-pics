@@ -14,6 +14,7 @@
     "devtron": "^1.4.0",
     "electron-compile": "^6.4.4",
     "electron-debug": "^2.1.0",
+    "jquery": "^3.3.1",
     "xel": "0.0.198"
   },
   "devDependencies": {

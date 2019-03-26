@@ -17,11 +17,14 @@ app.on('ready',() => {
     heigh: 1400,
     // resizable: false,
     title: 'Inventario Dulcería Tica',
+    webPreferences:{
+      nodeIntegration: false
+    },
     show: false
   })
 
   win.once('ready-to-show',() => {
-    win.show() //Muestra la ventana actual    
+    win.show() //Muestra la ventana actual
   })
 
   //Lo visual

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../assets/css/material.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="xel.min.js"></script>
     <script type="text/javascript" src="frontend.js"></script>
     <title>Registros Dulcería y Variedades Tica</title>
@@ -17,12 +18,7 @@
       </x-tab>
       <x-tab>
         <x-box  onclick="mostrarTablasCliente()" id="btn2">
-          <x-label>Clientes</x-label>
-        </x-box>
-      </x-tab>
-      <x-tab>
-        <x-box onclick="mostrarTablasProveedor()" id="btn3">
-          <x-label >Proveedor</x-label>
+          <x-label>Gestionar Inventario</x-label>
         </x-box>
       </x-tab>
       <x-tab>
@@ -34,13 +30,7 @@
     </header>
     <x-tabs centered>
       <x-tab>
-        <x-label>Total Clientes</x-label>
-      </x-tab>
-      <x-tab>
         <x-label>Total Productos</x-label>
-      </x-tab>
-      <x-tab>
-        <x-label>Total Proveedor</x-label>
       </x-tab>
     </x-tabs>
     <x-tabs centered>
@@ -60,7 +50,7 @@
             <tr>
               <th>Nombre de Producto</th>
               <th>Descripción</th>
-              <th>Precio</th>
+              <th>Costo</th>
             </tr>
           </thead>
           <tbody>
