@@ -8,6 +8,21 @@
 
 /* Mi parte */
 
+/* Colores rgb para logo de tica:
+azul bonito: 2f89fc
+naranja: f16821
+morado: 970690
+morado bonito: 421b9b
+lila: a06ee1
+morado bajo: cbbcf6
+azul claro bajo: cef9e2
+rosado claro: ffe6eb
+marrón: 5e0606
+amarillo: f9e75e
+rojo: c40018
+ */
+
+
 .header{
   justify-content: space-around;
 }
@@ -37,6 +52,11 @@ th{
 th,td{
   border: solid 1px #ccc;
   padding: 10px 20px;
+}
+
+.tabla-container{
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 #buscar{

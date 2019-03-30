@@ -1,25 +1,47 @@
 function mostrarTablaProducto() {
   document.getElementById('tabla1').style.display = 'block'
   document.getElementById('tabla2').style.display = 'none'
-  document.getElementById('tabla3').style.display = 'none'
-  buscarNombre_tabla1()
+  selectorEnVivo('btn1','click', function(evento) {
+    buscarNombre_tabla1()
+  });
 }
 
 function mostrarTablasCliente() {
   document.getElementById('tabla1').style.display = 'none'
   document.getElementById('tabla2').style.display = 'block'
-  document.getElementById('tabla3').style.display = 'none'
-  buscarNombre_tabla2()
+  selectorEnVivo('btn1','click', function(evento) {
+    buscarNombre_tabla2()
+  });
 }
 
-// function mostrarTablasProveedor() {
-//   document.getElementById('tabla1').style.display = 'none'
-//   document.getElementById('tabla2').style.display = 'none'
-//   document.getElementById('tabla3').style.display = 'block'
-//   buscarNombre()
-// }
+function selectorEnVivo(selector, tipoDeEvento, callback, contexto) {
+  (contexto || document).addEventListener(tipoDeEvento, function(evento) {
+    var encontrado; // Este va a ser el elemto encontrado
+    var elemento = event.target;
+    // Atravieso el arbol del DOM antes de encontrar === selector
+    while (elemento && !(encontrado = elemento.id === selector)) {
+      elemento = elemento.parentElement;
+    }
+    // Si es verdad que encontrado es un selector, aplico el callback
+    if (encontrado) {
+      callback.call(elemento, event);
+    }
+  }, false);
+}
+
 function buscarNombre_tabla1() {
   var $rows = $('#tabla1 tr');
+  $('#buscar').keyup(function() {
+    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',reg = RegExp(val, 'i'),text;
+    $rows.show().filter(function() {
+      text = $(this).text().replace(/\s+/g, ' ');
+      return !reg.test(text);
+    }).hide();
+  });
+}
+
+function buscarNombre_tabla2() {
+  var $rows = $('#tabla2 tr');
   $('#buscar').keyup(function() {
     var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
     reg = RegExp(val, 'i'),
@@ -30,53 +52,3 @@ function buscarNombre_tabla1() {
     }).hide();
   });
 }
-
-  function buscarNombre_tabla2() {
-    var $rows = $('#tabla2 tr');
-    $('#buscar').keyup(function() {
-      var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-      reg = RegExp(val, 'i'),
-      text;
-      $rows.show().filter(function() {
-        text = $(this).text().replace(/\s+/g, ' ');
-        return !reg.test(text);
-      }).hide();
-    });
-    }
-    // function buscarNombre_tabla2() {
-    //   var $rows = $('#tabla3 tr');
-    //   $('#buscar').keyup(function() {
-    //     var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
-    //     reg = RegExp(val, 'i'),
-    //     text;
-    //     $rows.show().filter(function() {
-    //       text = $(this).text().replace(/\s+/g, ' ');
-    //       return !reg.test(text);
-    //     }).hide();
-    //   });
-
-  // var celdas = document.querySelectorAll("#tabla1 td")
-  // var buscar = document.getElementById("buscar")
-  //
-  // buscar.addEventListener("keyup",function () {
-  //   for (let i = 0; i < celdas.length; i++) {
-  //     if (celdas[i].textContent.toLowerCase().indexOf(buscar.value.toLowerCase())===0) {
-  //       celdas.forEach(function (nodo) {
-  //         nodo.style.display = "none"
-  //       })
-  //       celdas[i].style.background = "#eee"
-  //       celdas[i].style.display = "table-cell"
-  //       break;
-  //     }else{
-  //       celdas[i].style.background = "white"
-  //       celdas.forEach(function(nodo) {
-  //         //Si no existe lo que busco
-  //         if (celdas[i]!==nodo) {
-  //           nodo.style.display = "table-cell"
-  //         }
-  //       })
-  //
-  //     }
-  //   }
-  // })
-  // mostrarTablaOriginal()
